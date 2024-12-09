@@ -1,11 +1,12 @@
 using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
 namespace FilmDataAPI.Models;
 
 public class Director
 {
     [Key]
-    public int DirectorId { get; set; }
+    public Guid DirectorId { get; set; }
     
     [StringLength(100)]
     public string Name { get; set; }

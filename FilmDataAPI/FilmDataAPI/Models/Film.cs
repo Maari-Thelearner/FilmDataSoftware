@@ -5,7 +5,7 @@ namespace FilmDataAPI.Models;
 public class Film
 {
     [Key]
-    public int FilmId { get; set; }
+    public Guid FilmId { get; set; }
     
     [StringLength(100)]
     public string Title { get; set; }
@@ -16,7 +16,7 @@ public class Film
     [RegularExpression(@"^(\d{4})$", ErrorMessage = "Enter a valid 4 digit Year")]
     public int? ReleaseYear { get; set; }
     
-    public int DirectorId { get; set; } //foreignKey
+    public Guid DirectorId { get; set; } //foreignKey
     
     public Director Director { get; set; }
 }

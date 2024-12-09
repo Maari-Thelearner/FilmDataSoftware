@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FilmDataAPI.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20241209132901_FirstMigration")]
+    [Migration("20241209151258_FirstMigration")]
     partial class FirstMigration
     {
         /// <inheritdoc />
@@ -27,11 +27,9 @@ namespace FilmDataAPI.Migrations
 
             modelBuilder.Entity("FilmDataAPI.Models.Director", b =>
                 {
-                    b.Property<int>("DirectorId")
+                    b.Property<Guid>("DirectorId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DirectorId"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Country")
                         .IsRequired()
@@ -50,14 +48,12 @@ namespace FilmDataAPI.Migrations
 
             modelBuilder.Entity("FilmDataAPI.Models.Film", b =>
                 {
-                    b.Property<int>("FilmId")
+                    b.Property<Guid>("FilmId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FilmId"));
-
-                    b.Property<int>("DirectorId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("DirectorId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Genre")
                         .IsRequired()

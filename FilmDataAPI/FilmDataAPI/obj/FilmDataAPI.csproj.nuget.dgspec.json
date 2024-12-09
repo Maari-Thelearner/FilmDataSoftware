@@ -13,6 +13,7 @@
         "packagesPath": "/Users/shiva/.nuget/packages/",
         "outputPath": "/Users/shiva/Documents/WebAPI/FilmDataSoftware/FilmDataAPI/FilmDataAPI/obj/",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "/Users/shiva/.nuget/NuGet/NuGet.Config"
         ],
