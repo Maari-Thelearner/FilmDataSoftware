@@ -17,4 +17,6 @@ public class Film
     public int? ReleaseYear { get; set; }
     
     public int DirectorId { get; set; } //foreignKey
+    
+    public Director Director { get; set; }
 }
