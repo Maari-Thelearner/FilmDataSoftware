@@ -1,3 +1,4 @@
+using FilmDataAPI.Models;
 using FilmDataAPI.Models.DTO;
 using FilmDataAPI.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -22,6 +23,21 @@ public class FilmsController: ControllerBase
         try
         {
             var data = await this._service.AddNewFilmService(dto, directorId);
+            return Ok(data);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex);
+        }
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetAllFilms()
+    {
+        try
+        {
+            List<Film> data = await this._service.GetAllFilmsService();
+
             return Ok(data);
         }
         catch (Exception ex)

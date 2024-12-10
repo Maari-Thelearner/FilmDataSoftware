@@ -27,4 +27,9 @@ public class FilmService : IFilmService
         await this._filmRepository.AddAsync(film);
         return film;
     }
+
+    public async Task<List<Film>> GetAllFilmsService()
+    {
+        return await this._filmRepository.GetAllFilmsAsync();
+    }
 }

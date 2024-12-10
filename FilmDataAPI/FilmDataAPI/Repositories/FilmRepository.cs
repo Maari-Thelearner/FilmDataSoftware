@@ -1,5 +1,6 @@
 using FilmDataAPI.Data;
 using FilmDataAPI.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace FilmDataAPI.Repositories;
 
@@ -17,5 +18,12 @@ public class FilmRepository : IFilmRepository
         await this._context.SaveChangesAsync();
 
         return entity;
+    }
+
+    public async Task<List<Film>> GetAllFilmsAsync()
+    {
+        List<Film> films = await this._context.Films.ToListAsync();
+
+        return films;
     }
 }
