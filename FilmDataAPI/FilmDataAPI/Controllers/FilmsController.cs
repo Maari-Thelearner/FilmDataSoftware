@@ -45,4 +45,20 @@ public class FilmsController: ControllerBase
             return BadRequest(ex);
         }
     }
+
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetFilmByID(Guid id)
+    {
+        try
+        {
+            Film data = await this._service.GetFilmByIdService(id);
+
+            return Ok(data);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex);
+        }
+    }
 }

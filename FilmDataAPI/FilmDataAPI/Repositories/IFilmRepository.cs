@@ -7,4 +7,6 @@ public interface IFilmRepository
     Task<Film> AddAsync(Film entity);
 
     Task<List<Film>> GetAllFilmsAsync();
+
+    Task<Film> GetFilmByIdAsync(Guid id);
 }

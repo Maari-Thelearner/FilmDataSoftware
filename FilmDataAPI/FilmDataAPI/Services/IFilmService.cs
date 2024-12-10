@@ -8,4 +8,6 @@ public interface IFilmService
     Task<Film> AddNewFilmService(AddFilmDTO dto, Guid directorId);
 
     Task<List<Film>> GetAllFilmsService();
+
+    Task<Film> GetFilmByIdService(Guid id);
 }

@@ -26,4 +26,9 @@ public class FilmRepository : IFilmRepository
 
         return films;
     }
+
+    public async Task<Film> GetFilmByIdAsync(Guid id)
+    {
+        return await this._context.Films.Where(x => x.FilmId == id).FirstOrDefaultAsync();
+    }
 }

@@ -32,4 +32,9 @@ public class FilmService : IFilmService
     {
         return await this._filmRepository.GetAllFilmsAsync();
     }
+
+    public async Task<Film> GetFilmByIdService(Guid id)
+    {
+        return await this._filmRepository.GetFilmByIdAsync(id);
+    }
 }
